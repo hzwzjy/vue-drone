@@ -8,8 +8,17 @@ steps:
       - npm config set registry https://registry.npm.taobao.org
       - npm install
       - npm run build
-when:
+    when:
+      branch:
+        include:
+          - master
+      event:
+        include:
+          - push
+trigger:
   branch:
-    - master
+    include:
+      - master
   event:
-    - push
+    include:
+      - push
